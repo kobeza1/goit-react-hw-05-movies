@@ -53,17 +53,3 @@ export const GlobalStyles = createGlobalStyle`
       }
 
       `;
-
-// button {
-//   padding: 6px 15px;
-//   border-radius: 30px;
-//   border: none;
-//   background-color: #d22566;
-//   color: white;
-//   font-weight: 700;
-// }
-
-// input {
-//   width: 200px;
-//   height: 20px;
-// }
