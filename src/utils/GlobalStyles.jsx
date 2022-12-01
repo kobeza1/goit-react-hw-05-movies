@@ -46,10 +46,28 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         margin: 0;
       }
+    
+
+      a {
+        color: gray;
+
+        &:visited {
+          color: gray;
+        }
+        text-decoration: none;
+      }
+
+      button {
+        padding: 6px 15px;
+        border: 1px solid;
+        background-color: #d22566;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
       section {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
+        margin-top: 16px;
       }
 
       `;
