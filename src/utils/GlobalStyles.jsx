@@ -66,6 +66,8 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 600;
         cursor: pointer;
         font-size: 16px;
+        display: inline-flex;
+        align-items: center;
 
       }
 
