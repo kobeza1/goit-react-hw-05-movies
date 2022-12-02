@@ -10,8 +10,9 @@ export const StyledLink = styled(NavLink)`
 
 export const NavigationList = styled.ul`
   display: flex;
-  padding: 16px;
-  font-size: 20px;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 500;
 `;
 
 export const NavigationItem = styled.li`
