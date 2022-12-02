@@ -58,7 +58,8 @@ export const GlobalStyles = createGlobalStyle`
       }
 
       button {
-        padding: 6px 15px;
+        height: 38px;
+        padding: 0 16px;
         border: 1px solid;
         background-color: #d22566;
         color: white;
