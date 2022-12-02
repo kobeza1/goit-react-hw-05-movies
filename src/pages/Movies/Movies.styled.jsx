@@ -4,7 +4,7 @@ export const Input = styled.input`
   height: 36px;
   min-width: 300px;
   padding: 10px 14px;
-  border: 1px solid ${props => props.theme.colors.beige};
+  border: 2px solid ${props => props.theme.colors.beige};
   outline: none;
   margin-right: 8px;
   font-weight: 600;
