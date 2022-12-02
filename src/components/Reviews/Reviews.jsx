@@ -20,7 +20,7 @@ const Reviews = () => {
     <ReviewsList>
       {reviews.map(({ author, content, id }) => (
         <ReviewsItem key={id}>
-          <ReviewsTitle>Author: ${author}</ReviewsTitle>
+          <ReviewsTitle>Author: {author}</ReviewsTitle>
           <TextContent>{content}</TextContent>
         </ReviewsItem>
       ))}
