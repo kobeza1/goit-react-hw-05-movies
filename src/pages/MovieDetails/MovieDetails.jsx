@@ -1,5 +1,6 @@
+import { useLocation, useNavigate, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import { useFetchMovie } from 'components/hooks/useFetchMovie';
-import { useLocation, useNavigate, Link, Outlet } from 'react-router-dom';
 import { Section } from 'components/Section/Section';
 
 import {
@@ -16,7 +17,7 @@ import {
   TitleAd,
 } from './MovieDetails.styled';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const movie = useFetchMovie();
   const navigate = useNavigate();
   const location = useLocation();
@@ -63,10 +64,14 @@ export const MovieDetails = () => {
                 <StyledLinkAd to={'reviews'}>Reviews</StyledLinkAd>
               </ListItemAd>
             </ListAd>
-            <Outlet />
+            <Suspense fallback={<div>Loading subpage...</div>}>
+              <Outlet />
+            </Suspense>
           </Section>
         </>
       )}
     </>
   );
 };
+
+export default MovieDetails;

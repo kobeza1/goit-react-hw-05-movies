@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useSearchParams, useLocation } from 'react-router-dom';
+import { Suspense } from 'react';
 import Notiflix, { Notify } from 'notiflix';
 
 import { fetchMoviesByName } from 'utils/api-service';
@@ -16,7 +17,7 @@ Notiflix.Notify.init({
   },
 });
 
-export const Movies = () => {
+const Movies = () => {
   const [movie, setMovie] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('movie');
@@ -59,8 +60,12 @@ export const Movies = () => {
           <button>Search</button>
         </Form>
         {query && <MoviesList movies={movie} location={location} />}
-        <Outlet />
+        <Suspense fallback={<div>Loading subpage...</div>}>
+          <Outlet />
+        </Suspense>
       </Section>
     </>
   );
 };
+
+export default Movies;

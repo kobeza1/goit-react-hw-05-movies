@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesCast } from 'utils/api-service';
 import {
@@ -10,19 +9,23 @@ import {
   CharacterName,
 } from './Cast.styled';
 
-export const Cast = () => {
+const Cast = () => {
   const [cast, setCast] = useState();
   const { id } = useParams();
 
   useEffect(() => {
-    fetchMoviesCast(id).then(setCast);
+    try {
+      fetchMoviesCast(id).then(setCast);
+    } catch (error) {
+      console.log(error);
+    }
   }, [id]);
 
   return (
     <CastList>
       {cast &&
-        cast.map(({ name, character, profile_path }) => (
-          <CastItem>
+        cast.map(({ name, character, profile_path, id }) => (
+          <CastItem key={id}>
             <div>
               <CastImage
                 src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
@@ -36,3 +39,5 @@ export const Cast = () => {
     </CastList>
   );
 };
+
+export default Cast;

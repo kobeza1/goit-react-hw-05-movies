@@ -43,3 +43,13 @@ export const fetchMoviesCast = async id => {
   });
   return response.data.cast;
 };
+
+export const fetchMoviesReviews = async id => {
+  path = `/movie/${id}/reviews`;
+  const response = await axios.get(`${BASE_URL + path}`, {
+    params: {
+      api_key: KEY,
+    },
+  });
+  return response.data.results;
+};
