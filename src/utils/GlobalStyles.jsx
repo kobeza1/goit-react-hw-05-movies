@@ -72,7 +72,7 @@ export const GlobalStyles = createGlobalStyle`
       }
 
       section {
-        margin-top: 20px;
+        margin: 20px 0;
       }
 
       `;
