@@ -63,8 +63,10 @@ export const GlobalStyles = createGlobalStyle`
         border: 1px solid;
         background-color: #d22566;
         color: white;
-        font-weight: 700;
+        font-weight: 600;
         cursor: pointer;
+        font-size: 16px;
+
       }
 
       section {
