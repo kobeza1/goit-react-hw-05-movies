@@ -43,15 +43,18 @@ export const ButtonBack = styled.button`
 export const ListAd = styled.ul`
   display: flex;
   margin-bottom: 16px;
+  background-color: ${props => props.theme.colors.beige};
+  padding: 8px 8px;
 `;
 
 export const ListItemAd = styled.li`
   &:not(:last-child) {
-    margin-right: 8px;
+    margin-right: 16px;
   }
 `;
 
 export const StyledLinkAd = styled(NavLink)`
+  font-weight: 600;
   &.active,
   &:hover {
     color: ${props => props.theme.colors.raspberry};
