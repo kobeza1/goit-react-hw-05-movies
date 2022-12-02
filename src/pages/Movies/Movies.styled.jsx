@@ -10,6 +10,7 @@ export const Input = styled.input`
   margin-right: 8px;
   font-weight: 500;
   font-size: 16px;
+  color: gray;
 `;
 
 export const Form = styled.form`
