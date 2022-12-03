@@ -10,7 +10,7 @@ import {
 } from './Cast.styled';
 
 const Cast = () => {
-  const [cast, setCast] = useState();
+  const [cast, setCast] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -21,22 +21,23 @@ const Cast = () => {
     }
   }, [id]);
 
-  return (
+  return cast.length > 0 ? (
     <CastList>
-      {cast &&
-        cast.map(({ name, character, profile_path, id }) => (
-          <CastItem key={id}>
-            <div>
-              <CastImage
-                src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
-                alt={name}
-              ></CastImage>
-              <ActorName>{name}</ActorName>
-              <CharacterName>{character}</CharacterName>
-            </div>
-          </CastItem>
-        ))}
+      {cast.map(({ name, character, profile_path, id }) => (
+        <CastItem key={id}>
+          <div>
+            <CastImage
+              src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
+              alt={name}
+            ></CastImage>
+            <ActorName>{name}</ActorName>
+            <CharacterName>{character}</CharacterName>
+          </div>
+        </CastItem>
+      ))}
     </CastList>
+  ) : (
+    <div>No information about the actors</div>
   );
 };
 

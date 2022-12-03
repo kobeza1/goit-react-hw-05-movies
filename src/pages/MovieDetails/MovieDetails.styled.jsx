@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const MovieCardContainer = styled.div`
@@ -53,9 +53,8 @@ export const ListItemAd = styled.li`
   }
 `;
 
-export const StyledLinkAd = styled(NavLink)`
+export const StyledLinkAd = styled(Link)`
   font-weight: 600;
-  &.active,
   &:hover {
     color: ${props => props.theme.colors.raspberry};
   }

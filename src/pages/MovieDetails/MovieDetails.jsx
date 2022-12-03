@@ -21,15 +21,14 @@ const MovieDetails = () => {
   const movie = useFetchMovie();
   const navigate = useNavigate();
   const location = useLocation();
+  const backLink = location?.state?.from ?? '/';
 
   return (
     <>
       {movie && (
         <>
           <Section>
-            <ButtonBack onClick={() => navigate(location?.state?.from ?? '/')}>
-              Go back
-            </ButtonBack>
+            <ButtonBack onClick={() => navigate(backLink)}>Go back</ButtonBack>
 
             <MovieCardContainer>
               <MovieImage
@@ -58,10 +57,14 @@ const MovieDetails = () => {
             <TitleAd>Additional information</TitleAd>
             <ListAd>
               <ListItemAd>
-                <StyledLinkAd to={'cast'}>Cast</StyledLinkAd>
+                <StyledLinkAd to={'cast'} state={{ from: backLink }}>
+                  Cast
+                </StyledLinkAd>
               </ListItemAd>
               <ListItemAd>
-                <StyledLinkAd to={'reviews'}>Reviews</StyledLinkAd>
+                <StyledLinkAd to={'reviews'} state={{ from: backLink }}>
+                  Reviews
+                </StyledLinkAd>
               </ListItemAd>
             </ListAd>
             <Suspense fallback={<div>Loading subpage...</div>}>
